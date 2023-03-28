@@ -1,0 +1,24 @@
+stages:
+  download:
+    cmd: python code/0_download_data.py
+    deps:
+      - code/0_download_data.py
+      - https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/ChurnData.csv
+    outs:
+      - data/downloaded
+  prepare:
+    cmd: python code/1_prepare_data.py
+    deps:
+      - code/1_prepare_data.py
+      - data/downloaded
+    outs:
+      - data/prepared
+  train: 
+    cmd: python code/2_train_NN.py
+    deps:
+      - code/2_train_NN.py
+      - data/prepared
+    outs:
+      - model
+plots:
+  - data/model/plot_train_val_loss.png
