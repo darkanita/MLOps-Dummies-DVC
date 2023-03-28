@@ -118,6 +118,13 @@ dvc init
 
 Esto nos creara una carpeta .dvc. En esta carpeta se guardaran los archivos de configuracion de DVC.
 
+### Instalar Librerias
+
+Para poder ejecutar el codigo de este tutorial, es necesario instalar las siguientes librerias:
+
+```bash
+pip install -r requirements.txt
+```
 
 
 
